@@ -15,6 +15,8 @@ namespace QuestionTest
 {
     public partial class Questing : Form
     {
+
+
         List<QuestionClass> listQuestion;
         public int indexQuest = 0;
         public bool[] result;
@@ -23,6 +25,8 @@ namespace QuestionTest
         System.Timers.Timer t;
         int m = 10, s = 0;
 
+
+        public int limit = 0;  // Two false form exit!
         public Questing()
         {
 
@@ -325,8 +329,8 @@ namespace QuestionTest
             t.Interval = 1000;
             t.Elapsed += OnTimeEvent;
             t.Start();
+            this.progressBar1.Maximum = 10;
             ShowFormQuesting();
-
         }
 
         public void OnTimeEvent(object sender, ElapsedEventArgs e)
@@ -368,6 +372,7 @@ namespace QuestionTest
                     result[indexQuest] = ans.IsTrue;
                     indexQuest++;
                     count--;
+                    this.progressBar1.Value += 1;
 
                     if(ans.IsTrue == true)
                     {
@@ -396,6 +401,7 @@ namespace QuestionTest
                     }
                     else
                     {
+                        limit++;
                         SoundPlayer soundPlayer1 = new SoundPlayer(Properties.Resources.lose);
                           soundPlayer1.Play();
                         if (indexQuest == 1)
@@ -419,6 +425,15 @@ namespace QuestionTest
                         if (indexQuest == 10)
                             lbl10.BackColor = Color.Red;
                     }
+
+                    if(limit > 2)
+                    {
+                        t.Stop();
+                        ResultForm resultform = new ResultForm(result);
+                        resultform.ShowDialog();
+                        this.Close();
+                    }
+
                 }
             }
 
