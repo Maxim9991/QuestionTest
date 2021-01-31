@@ -18,6 +18,7 @@ namespace QuestionTest
         public ResultForm(bool[] result)
         {
             InitializeComponent();
+            this.progressBar1.Maximum = 100;
 
             for (int i = 0; i < result.Length; i++)
             {
@@ -33,29 +34,62 @@ namespace QuestionTest
 
             int bal = right * 10;
             if (bal == 0)
-                pictureBox1.Image = Properties.Resources._0;
+            {
+                this.progressBar1.Value += 0;
+                lblTaskProc.Text = "0%";
+            }
             if (bal == 10)
-                pictureBox1.Image = Properties.Resources._10;
+            {
+                this.progressBar1.Value += 10;
+                lblTaskProc.Text = "10%";
+            }
             if (bal == 20)
-                pictureBox1.Image = Properties.Resources._20;
+            {
+                this.progressBar1.Value += 20;
+                lblTaskProc.Text = "20%";
+            }
             if (bal == 30)
-                pictureBox1.Image = Properties.Resources._30;
+            {
+                this.progressBar1.Value += 30;
+                lblTaskProc.Text = "30%";
+            }
             if (bal == 40)
-                pictureBox1.Image = Properties.Resources._40;
+            {
+                this.progressBar1.Value += 40;
+                lblTaskProc.Text = "40%";
+            }    
             if (bal == 50)
-                pictureBox1.Image = Properties.Resources._50;
+            {
+                this.progressBar1.Value += 50;
+                lblTaskProc.Text = "50%";
+            }
             if (bal == 60)
-                pictureBox1.Image = Properties.Resources._60;
+            {
+                this.progressBar1.Value += 60;
+                lblTaskProc.Text = "60%";
+            }
             if (bal == 70)
-                pictureBox1.Image = Properties.Resources._70;
+            {
+                this.progressBar1.Value += 70;
+                lblTaskProc.Text = "70%";
+            }
             if (bal == 80)
-                pictureBox1.Image = Properties.Resources._80;
+            {
+                this.progressBar1.Value += 80;
+                lblTaskProc.Text = "80%";
+            }
             if (bal == 90)
-                pictureBox1.Image = Properties.Resources._90;
+            {
+                this.progressBar1.Value += 90;
+                lblTaskProc.Text = "90%";
+            }    
             if (bal == 100)
-                pictureBox1.Image = Properties.Resources._100;
+            {
+                this.progressBar1.Value += 100;
+                lblTaskProc.Text = "100%";
+            }    
 
-            if(bal >= 80)
+            if (bal >= 80)
                 lblTest.Text = "Складено";
             else if(bal < 80)
                 lblTest.Text = "Не складено";
