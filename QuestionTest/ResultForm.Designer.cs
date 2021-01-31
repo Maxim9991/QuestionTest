@@ -36,6 +36,7 @@ namespace QuestionTest
             this.lblgoodresult = new System.Windows.Forms.Label();
             this.lblproc = new System.Windows.Forms.Label();
             this.lblTest = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -96,12 +97,20 @@ namespace QuestionTest
             this.lblTest.TabIndex = 6;
             this.lblTest.Text = "test";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(31, 416);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(223, 23);
+            this.progressBar1.TabIndex = 7;
+            // 
             // ResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(290, 450);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblTest);
             this.Controls.Add(this.lblproc);
             this.Controls.Add(this.lblgoodresult);
@@ -128,5 +137,6 @@ namespace QuestionTest
         private System.Windows.Forms.Label lblgoodresult;
         private System.Windows.Forms.Label lblproc;
         private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
